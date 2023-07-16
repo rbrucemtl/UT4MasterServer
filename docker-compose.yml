@@ -12,7 +12,7 @@ services:
     volumes:
       - ./logs:/app/Logs
     ports:
-      - "5000:8088"
+      - "5000:80"
     networks:
       - net
     depends_on:
@@ -24,7 +24,7 @@ services:
       context: UT4MasterServer.Web
       dockerfile: .docker/Dockerfile
     ports:
-      - "5001:8082"
+      - "5001:8080"
     networks:
       - net
   mongo:
@@ -56,7 +56,7 @@ services:
     depends_on:
       - mongo
     ports:
-      - "8888:8086"
+      - "8888:8081"
     networks:
       - net
 
